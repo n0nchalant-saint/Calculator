@@ -3,48 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Calculator</title>
-
+    <title>Saint Scientific Calculator</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        h1 {  
+            color: white;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        </style>
 </head>
 
 <body>
-
     <div class="calculator">
+        <h1>Saint Scientific Calculator</h1>
 
+        <!-- 1. DISPLAY -->
         <input type="text" id="display" readonly>
 
+        <!-- 2. ALL BUTTONS -->
         <div class="buttons">
-
+            <!-- Row 1 -->
             <button onclick="clearDisplay()">C</button>
             <button onclick="deleteLast()">DEL</button>
-            <button onclick="addToDisplay('%')">%</button>
-            <button onclick="addToDisplay('/')">÷</button>
+            <button onclick="append('%')">%</button>
+            <button onclick="append('/')">÷</button>
 
-            <button onclick="addToDisplay('7')">7</button>
-            <button onclick="addToDisplay('8')">8</button>
-            <button onclick="addToDisplay('9')">9</button>
-            <button onclick="addToDisplay('*')">×</button>
+            <!-- Row 2 - SCI -->
+            <button onclick="sin()">sin</button>
+            <button onclick="cos()">cos</button>
+            <button onclick="tan()">tan</button>
+            <button onclick="append('*')">*</button>
 
-            <button onclick="addToDisplay('4')">4</button>
-            <button onclick="addToDisplay('5')">5</button>
-            <button onclick="addToDisplay('6')">6</button>
-            <button onclick="addToDisplay('-')">−</button>
+            <!-- Row 3 - SCI -->
+            <button onclick="sqrt()">√</button>
+            <button onclick="power()">^</button>
+            <button onclick="pi()">π</button>
+            <button onclick="append('-')">-</button>
 
-            <button onclick="addToDisplay('1')">1</button>
-            <button onclick="addToDisplay('2')">2</button>
-            <button onclick="addToDisplay('3')">3</button>
-            <button onclick="addToDisplay('+')">+</button>
+            <!-- Row 4 -->
+            <button onclick="append('7')">7</button>
+            <button onclick="append('8')">8</button>
+            <button onclick="append('9')">9</button>
+            <button onclick="append('+')">+</button>
 
-            <button onclick="addToDisplay('0')" class="zero">0</button>
-            <button onclick="addToDisplay('.')">.</button>
-            <button onclick="calculate()">=</button>
+            <!-- Row 5 -->
+            <button onclick="append('4')">4</button>
+            <button onclick="append('5')">5</button>
+            <button onclick="append('6')">6</button>
+            <button onclick="calculate()" class="equals">=</button>
 
+            <!-- Row 6 -->
+            <button onclick="append('1')">1</button>
+            <button onclick="append('2')">2</button>
+            <button onclick="append('3')">3</button>
+            <button onclick="append('.')">.</button>
+
+            <!-- Row 7 -->
+            <button onclick="append('0')" class="zero">0</button>
+            <button onclick="openHistory()" class="history-button">History</button>
         </div>
-
+        
+        <!-- HISTORY FULL SCREEN OVERLAY -->
+<div id="history-overlay" class="history-overlay">
+    <button onclick="closeHistory()" class="close-btn">← Back to Calculator</button>
+    <h2>📜 Calculation History</h2>
+    <button onclick="clearHistory()">Clear All</button>
+    <div id="history-list"></div>
+</div>
+        </div>
+        
     </div>
 
+    <!-- 4. LINK JS AT THE BOTTOM -->
     <script src="script.js"></script>
 
 </body>
+
 </html>
