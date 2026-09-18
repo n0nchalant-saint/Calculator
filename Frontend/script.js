@@ -65,7 +65,7 @@ function calculate() {
         let operator = match[2];
         let num2 = Number(match[3]);
 
-        fetch('http://localhost:3000/calculate', {
+      fetch('https://calculator-8wts.onrender.com/calculate', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
