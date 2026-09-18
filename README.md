@@ -1,4 +1,4 @@
- Saint Scientific Calculator 🧮
+# Saint Scientific Calculator 🧮
 
 A full-stack scientific calculator with history saved to database.
 
